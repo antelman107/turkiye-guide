@@ -118,6 +118,9 @@
 
 В приложении Türk Telekom всё прямолинейно: тыкаешь по шагам, получаешь коды, приложение само говорит, что `başvuru` в Göçbil создан — иди туда.
 
+Если приложения ТТ нет или лень искать — прямая ссылка для старта верификации:  
+[https://onlineislem.turktelekom.com.tr/omni/kimlik-dogrulama](https://onlineislem.turktelekom.com.tr/omni/kimlik-dogrulama)
+
 Дальше в Göçbil: [подтверждение заявки](#подтверждение-заявки-в-göçbil) — оператор **Türk Telekom / ТТ** → `Onayla` → распознавание лица → `Onaylandı`.
 
 Статус в e-Devlet может появиться не сразу — см. [проверку статуса в e-Devlet](#проверка-статуса-в-e-devlet).
