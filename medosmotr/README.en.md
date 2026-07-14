@@ -1,5 +1,7 @@
 # Medical Board in Antalya for SGK: Step-by-Step
 
+← [Table of contents](../README.md) · Русский: [README](README.md)
+
 ## Key Point
 
 For SGK purposes in Antalya, medical board reports are accepted only from `Antalya Eğitim ve Araştırma Hastanesi`. Other hospitals may be closer or have easier appointment availability, but the SGK office does not accept them.

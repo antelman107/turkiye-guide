@@ -1,0 +1,114 @@
+# Kimlik doğrulama (верификация SIM-карты)
+
+← [К оглавлению](../README.md)
+
+Верификация личности для SIM-карт иностранцев (БТК). Без неё номер могут заблокировать. Ниже — по операторам.
+
+Статус заявки в e-Devlet: [BTK e-Kayıt Başvurusu Onay İşlemleri](https://www.turkiye.gov.tr/btk-e-kayit-basvurusu-onay-islemleri-gercek-kisi) — в колонке `Başvuru Durumu` должно быть `Onaylandı`:
+
+![Статус Onaylandı в e-Devlet](images/edevlet-onaylandi.png)
+
+Скриншоты и часть сценария Turkcell основаны на постах [Стамбульского канала](https://t.me/istanbul_channel): [1714](https://t.me/istanbul_channel/1714), [1715](https://t.me/istanbul_channel/1715).
+
+---
+
+## Göçbil (общее для всех)
+
+Нужно почти всем: после заявки у оператора подтверждение идёт в приложении Göçbil.
+
+- [App Store](https://apps.apple.com/tr/app/g%C3%B6%C3%A7bil/id6444447699)
+- [Google Play (турецкий)](https://play.google.com/store/apps/details?id=tr.gov.goc.mobil)
+- Android не турецкого региона: [APK](https://apkpure.com/g%C3%B6%C3%A7bil/tr.gov.goc.mobil)
+
+Приложение есть только в турецких маркетах. Если маркет другой страны — нужен турецкий аккаунт (можно переключаться).
+
+Вход через e-Devlet. Приложение глючит — просто повторите шаги. На iPhone часто не работает: проще взять Android. Если не нажимаются кнопки — уменьшите масштаб экрана в настройках.
+
+### Подтверждение заявки в Göçbil
+
+1. `OPERATÖR İŞLEMLERİ`
+
+![Шаг 1: OPERATÖR İŞLEMLERİ](images/gocbil-01.png)
+
+2. Тип `Haberleşme` → ваш оператор (`Turkcell` / `Vodafone` / для Türk Telekom — `ТТ`) → `Devam Et`
+
+![Шаг 2: Haberleşme и оператор](images/gocbil-02.png)
+
+3. Заявка `Onay Bekliyor` → `Onayla`
+
+![Шаг 3: Onayla](images/gocbil-03.png)
+
+4. Вниз, галка → снова `Onayla`
+
+![Шаг 4: галка и Onayla](images/gocbil-04.png)
+
+5. Документы иностранцев без чипа: `Yüz Tanıma ile Devam Et`
+
+![Шаг 5: Yüz Tanıma](images/gocbil-05.png)
+
+6. Разрешение камеры → `İzin Ver`
+
+![Шаг 6: разрешение камеры](images/gocbil-06.png)
+
+7. Без очков, маски, шапки/капюшона, достаточно светло → `Hazırım, Başlayalım`
+
+![Шаг 7: подготовка](images/gocbil-07.png)
+
+8. Следуйте подсказкам (повороты головы и т.п.). Между шагами бывает `Yüzünüzü düz tutun` — смотрите прямо.
+
+![Шаг 8: подсказки](images/gocbil-08.png)
+
+![Расшифровка подсказок](images/gocbil-09.png)
+
+9. `Doğrulama Başarılı` → `Devam Et`
+
+![Шаг 9: успех](images/gocbil-10.png)
+
+После этого статус в Göçbil должен стать `Onaylandı`. Проверьте также в e-Devlet: [BTK e-Kayıt Başvurusu Onay İşlemleri](https://www.turkiye.gov.tr/btk-e-kayit-basvurusu-onay-islemleri-gercek-kisi) — там в `Başvuru Durumu` тоже должно быть `Onaylandı` (как на скрине в начале).
+
+---
+
+## 1) Turkcell
+
+Сроки из практики канала: сделать **до ~5 сентября**; после блокировки восстановление возможно примерно **до 25 декабря**, потом номер могут забрать.
+
+Если симка на другого иностранца — верифицируете его данными или переоформляете в офисе.
+
+1. Обновите приложение Turkcell. Если интерфейс на английском — переключите на турецкий.
+2. Установите Göçbil (см. выше).
+3. На старте может вылезти окно `Abonelik Kaydını Güncelle`. Если нет — [dijital.li/abonelikguncelleme](https://dijital.li/abonelikguncelleme) (язык приложения до перехода — турецкий).
+4. Пройдите шаги: кимлик / дата рождения → тип документа (ВНЖ, рабочее, паспорт…) → сканирование документа с двух сторон → переход в Göçbil.
+
+![Шаги в Turkcell](images/turkcell-01.png)
+
+5. В Göçbil подтвердите заявку, как в общем разделе.
+6. Статус: [e-Devlet](https://www.turkiye.gov.tr/btk-e-kayit-basvurusu-onay-islemleri-gercek-kisi) → `Onaylandı`.
+
+Несколько номеров: в Turkcell справа сверху человечек → `Hesap ekle`, затем заявку на каждый номер отдельно.
+
+Принимают и ВНЖ, и рабочее; пишут, что бывает и просроченный ВНЖ. Вариант с паспортом в интерфейсе есть, но опыт менее очевидный.
+
+---
+
+## 2) Türk Telekom (ТТ)
+
+В приложении Türk Telekom всё прямолинейно: тыкаешь по шагам, получаешь коды, приложение само говорит, что `başvuru` в Göçbil создан — иди туда.
+
+Дальше в Göçbil: вход через e-Devlet → `OPERATÖR İŞLEMLERİ` → оператор **Türk Telekom / ТТ** → видна заявка → `Onayla` → распознавание лица → `Onaylandı`. Детали кнопок — в общем разделе про Göçbil.
+
+Проверка в [e-Devlet](https://www.turkiye.gov.tr/btk-e-kayit-basvurusu-onay-islemleri-gercek-kisi): статус `Onaylandı` должен «прорасти», но не всегда сразу.
+
+---
+
+## 3) Vodafone
+
+Göçbil ставится и настраивается так же, как выше. Саму заявку в приложении, как у Turkcell/ТТ, обычно **не создать** — нужен **офис Vodafone**.
+
+В Анталье:
+
+- рекомендуется офис у **Turkay Hotel**;
+- **не рекомендуется** офис у **5M Migros**.
+
+В офисе открываете Göçbil (со своего телефона или с устройства сотрудников) и дальше они помогают пройти подтверждение.
+
+После — проверьте статус в [e-Devlet](https://www.turkiye.gov.tr/btk-e-kayit-basvurusu-onay-islemleri-gercek-kisi): `Onaylandı`.
