@@ -17,10 +17,12 @@
 - [1) Turkcell](#1-turkcell)
 - [Подтверждение заявки в Göçbil](#подтверждение-заявки-в-göçbil)
 - [2) Türk Telekom (ТТ)](#2-türk-telekom-тт)
+  - [Заявка в e-Devlet и пустой профиль в Göçbil](#заявка-в-e-devlet-и-пустой-профиль-в-göçbil)
+  - [Если заявка не отображается в Göçbil](#если-заявка-не-отображается-в-göçbil)
 - [3) Vodafone](#3-vodafone)
 - [Проверка статуса в e-Devlet](#проверка-статуса-в-e-devlet)
 
-Скриншоты и часть сценария Turkcell основаны на постах [Стамбульского канала](https://t.me/istanbul_channel): [1714](https://t.me/istanbul_channel/1714), [1715](https://t.me/istanbul_channel/1715).
+Скриншоты и часть сценария Turkcell основаны на постах [Стамбульского канала](https://t.me/istanbul_channel): [1714](https://t.me/istanbul_channel/1714), [1715](https://t.me/istanbul_channel/1715). По Türk Telekom — также [1741](https://t.me/istanbul_channel/1741).
 
 ---
 
@@ -124,6 +126,51 @@
 Дальше в Göçbil: [подтверждение заявки](#подтверждение-заявки-в-göçbil) — оператор **Türk Telekom / ТТ** → `Onayla` → распознавание лица → `Onaylandı`.
 
 Статус в e-Devlet может появиться не сразу — см. [проверку статуса в e-Devlet](#проверка-статуса-в-e-devlet).
+
+### Заявка в e-Devlet и пустой профиль в Göçbil
+
+У части абонентов Turk Telekom [заявка в e-Devlet](#проверка-статуса-в-e-devlet) может **отсутствовать**, а персональные данные в Göçbil — быть **пустыми**. Пока не зафиксировано проблем из‑за этого: верификация при этом может пройти нормально.
+
+### Если заявка не отображается в Göçbil
+
+Выдержка из [поста канала](https://t.me/istanbul_channel/1741): заявку на верификацию создали в Türk Telekom, но в Göçbil она не появилась. Решение — **сбросить заявку** и пройти шаги заново. Через офис, возможно, тоже можно — опыт пока не собран.
+
+⚠️ Способ ниже требует **компьютер** (с телефона не получится). Шаги **не гарантированы** — это обходной путь из практики канала.
+
+1. Откройте [https://onlineislem.turktelekom.com.tr/omni/kimlik-dogrulama](https://onlineislem.turktelekom.com.tr/omni/kimlik-dogrulama). Предполагается, что статус заявки уже `Doğrulama işleminiz başarıyla alındı!`.
+2. Откройте Chrome DevTools → вкладка **Network** (на Mac: меню View → Developer → Developer Tools).
+3. Обновите страницу.
+4. В списке запросов найдите `validateChannel` (удобно через поиск).
+5. Правый клик по запросу → **Override Content**.
+6. Замените содержимое на:
+
+```json
+{
+    "preqRes": {
+        "preqRes": [
+            {
+                "returnCode": 9998,
+                "returnMessage": "OMNI-MSG-102",
+                "parameterList": [
+                    {
+                        "charName": "RESPONSETYPE",
+                        "charValue": "SUCCESS"
+                    },
+                    {
+                        "charName": "VALIDATIONCODE",
+                        "charValue": "UPDATE_CUST"
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
+Изменённый `returnMessage` показывает кнопку; `RESPONSETYPE=SUCCESS` пропускает пре-валидацию при нажатии. Сохраните (Ctrl+S / ⌘+S).
+
+7. Обновите страницу и нажмите `Onayla ve Doğrulamayı Başlat`.
+8. Перейдите в Göçbil и пройдите [вторую часть](#подтверждение-заявки-в-göçbil) по появившейся заявке.
 
 ---
 
