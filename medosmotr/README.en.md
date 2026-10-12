@@ -2,6 +2,17 @@
 
 ← [Table of contents](../README.md) · Русский: [README](README.md)
 
+## Do you need a medical board for a residence permit
+
+Before booking, check whether the medical board is needed at all.
+
+- Worker insurance status: [SPAS Müstehaklık Sorgulama (Sağlık Provizyon Aktivasyon Sistemi)](https://www.turkiye.gov.tr/spas-mustahaklik-sorgulama). It should say something like `Aktif`.
+- Relatives currently attached to the worker's insurance: [Genel Sağlık Sigortalısının Bakmakla Yükümlü Olduğu Aile Bireyleri Sorgulama](https://www.turkiye.gov.tr/sosyal-guvenlik-genel-saglik-sigortalisinin-bakmakla-yukumlu-oldugu-aile-bireyleri-sorgulama).
+
+If both checks are OK — the insurance is active and the relatives are attached — a medical board for the residence permit is not needed.
+
+---
+
 ## Key Point
 
 For SGK purposes in Antalya, medical board reports are accepted only from `Antalya Eğitim ve Araştırma Hastanesi`. Other hospitals may be closer or have easier appointment availability, but the SGK office does not accept them.

@@ -2,6 +2,17 @@
 
 ← [К оглавлению](../README.md) · English: [README in English](README.en.md)
 
+## Нужен ли медосмотр для ВНЖ
+
+Перед записью можно проверить, нужен ли медосмотр вообще.
+
+- Состояние страховки работника: [SPAS Müstehaklık Sorgulama (Sağlık Provizyon Aktivasyon Sistemi)](https://www.turkiye.gov.tr/spas-mustahaklik-sorgulama). Должно быть написано что-то вроде `Aktif`.
+- Кто из родственников сейчас привязан к страховке работника: [Genel Sağlık Sigortalısının Bakmakla Yükümlü Olduğu Aile Bireyleri Sorgulama](https://www.turkiye.gov.tr/sosyal-guvenlik-genel-saglik-sigortalisinin-bakmakla-yukumlu-oldugu-aile-bireyleri-sorgulama).
+
+Если оба пункта ОК — страховка активна и родственники привязаны, — медосмотр для ВНЖ не нужен.
+
+---
+
 ## Ключевой момент
 
 Медосмотры в Анталье для SGK подходят только из больницы `Antalya Eğitim ve Araştırma Hastanesi`. В других больницах может быть ближе или проще поймать слот, но офис SGK их не принимает.
